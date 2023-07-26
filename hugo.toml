@@ -1,0 +1,40 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'My Blog'
+
+[menu]
+  [[menu.header]]
+    name = "Blog"
+    weight = 1
+    url = "blog"
+  [[menu.header]]
+    name = "About this site"
+    weight = 2
+    url = "aboutsite"
+  [[menu.header]]
+    name = "About Me"
+    weight = 0
+    url = "aboutme"
+
+[params]
+author = "Imad Alihodzic"
+user = "iknek"
+hostname = "github.io" 
+
+readingTime = true  # Show reading time on post page
+published = true  # Show published data on post page
+
+[[params.social]]
+key = 0
+name = "Github"
+url = "https://github.com/iknek"
+
+[[params.social]]
+key = 1
+name = "LinkedIn"
+url = "https://www.linkedin.com/in/imad-alihodzic/"
+
+[[params.social]]
+key = 2
+name = "Email"
+url = "mailto:imad.alihodzic@yahoo.com"
