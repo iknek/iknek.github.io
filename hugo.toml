@@ -3,12 +3,11 @@ languageCode = 'en-us'
 title = 'My Blog'
 googleAnalytics = 'G-PPQ7C1XYDS'
 
-
 [menu]
   [[menu.header]]
     name = "Blog"
     weight = 1
-    url = ""
+    url = "blog"
   [[menu.header]]
     name = "About this site"
     weight = 2
