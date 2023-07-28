@@ -1,0 +1,30 @@
+.my-image-class {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    max-width: 50%;
+    height: auto;
+}
+
+.horizontal-class {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    max-width: 70%;
+    height: auto;
+}
+
+.horizontal-class-two {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+figure figcaption {
+    text-align: center;
+}
