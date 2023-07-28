@@ -7,7 +7,7 @@ googleAnalytics = 'G-PPQ7C1XYDS'
   [[menu.header]]
     name = "Blog"
     weight = 1
-    url = "post"
+    url = "blog"
   [[menu.header]]
     name = "About this site"
     weight = 2
