@@ -1,7 +1,7 @@
 +++
 author = "Imad Alihodzic"
 title = "Projects & Content Posted to Other Sites"
-date = "2019-03-11"
+date = "2019-07-20"
 description = "Links and descriptions to notable past projects"
 tags = [
     "projects",
