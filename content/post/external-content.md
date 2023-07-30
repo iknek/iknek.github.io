@@ -22,7 +22,7 @@ This is a collection of my projects, written content, and other information, cur
 
 ## Object oriented programming patterns guide
 
-In the winter of 2021, I was taking the TDA552 course at Chalmers (Object Oriented Programming). Whilst revising for the oral exam, and I friend and I became increasingly frustrated for two reasons.
+In the winter of 2021, I was taking the TDA552 course at Chalmers (Object Oriented Programming). Whilst revising for the oral exam, a friend and I became increasingly frustrated for two reasons.
 
 1. A fair bit of online information about OOP design patterns was innacurate, or difficult to understand.
 2. Classic literature (books, lectures, etc) was often very long, and contained much unneccessary information.
