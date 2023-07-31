@@ -1,13 +1,14 @@
 <div class="socialNavbar">
-        <ul>
+    <meta name="description" content="A personal blog and website where you can learn more about me and what I do." />
+    <ul>
         {{ range sort .Site.Params.social "key"}}
         <li>
             {{ if isset . "icon" }}
-                <a href="{{ .url | safeURL }}" aria-hidden="true" title="{{ .name }}">
-                    <i class="{{ .icon }}"></i>
-                </a>
+            <a href="{{ .url | safeURL }}" aria-hidden="true" title="{{ .name }}">
+                <i class="{{ .icon }}"></i>
+            </a>
             {{ else }}
-                <a href="{{ .url | safeURL }}">{{ .name }}</a>
+            <a href="{{ .url | safeURL }}">{{ .name }}</a>
             {{ end }}
         </li>
         {{ end }}
@@ -16,8 +17,9 @@
     <div class="socialNavbar my-custom-text">
         Hi!
         <br>
-        This site is intended to be my little corner of the internet, where I post my thoughts, research, and interesting information. Check out the 'Blog', 'About Me', or 'About This Site' to find 
+        This site is intended to be my little corner of the internet, where I post my thoughts, research, and
+        interesting information. Check out the 'Blog', 'About Me', or 'About This Site' to find
         out more.
-        </div>
+    </div>
     <br><br>
 </div>
