@@ -1,5 +1,5 @@
 <div class="socialNavbar">
-    <ul>
+        <ul>
         {{ range sort .Site.Params.social "key"}}
         <li>
             {{ if isset . "icon" }}
@@ -12,4 +12,12 @@
         </li>
         {{ end }}
     </ul>
+    <br><br>
+    <div class="socialNavbar my-custom-text">
+        Hi!
+        <br>
+        This site is intended to be my little corner of the internet, where I post my thoughts, research, and interesting information. Check out the 'Blog', 'About Me', or 'About This Site' to find 
+        out more.
+        </div>
+    <br><br>
 </div>

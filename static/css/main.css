@@ -28,3 +28,8 @@
 figure figcaption {
     text-align: center;
 }
+
+.my-custom-text {
+    font-family: 'Fira Mono';
+    font-size: x-large;
+  }
