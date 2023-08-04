@@ -2,6 +2,9 @@ baseURL = 'http://iknek.github.io/'
 languageCode = 'en-us'
 title = 'My Blog'
 googleAnalytics = 'G-PPQ7C1XYDS'
+title = "Imad Alihodzic"
+description = "A personal website and blog."
+
 
 [menu]
   [[menu.header]]

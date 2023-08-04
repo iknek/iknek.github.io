@@ -1,7 +1,7 @@
 +++
 author = "Imad Alihodzic"
 title = "Projects & Content Posted to Other Sites"
-date = "2019-07-20"
+date = "2023-07-20"
 description = "Links and descriptions to notable past projects"
 tags = [
     "projects",
@@ -24,7 +24,7 @@ This is a collection of my projects, written content, and other information, cur
 
 In the winter of 2021, I was taking the TDA552 course at Chalmers (Object Oriented Programming). Whilst revising for the oral exam, a friend and I became increasingly frustrated for two reasons.
 
-1. A fair bit of online information about OOP design patterns was innacurate, or difficult to understand.
+1. A fair bit of online information about OOP design patterns was inaccurate, or difficult to understand.
 2. Classic literature (books, lectures, etc) was often very long, and contained much unneccessary information.
 
 As such, we made our own document, summarizing all the relevent design patterns for the course. It can be found [here](https://docs.google.com/document/d/1xnfqXqUVfe49HLLmR8NmttV2_ft6sCwBEjIhSNsaDr0/edit?usp=sharing).
