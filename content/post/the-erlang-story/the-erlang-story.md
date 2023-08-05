@@ -1,7 +1,7 @@
 +++
 author = "Imad Alihodzic"
 title = "The Rise & Fall of Erlang at Ericsson AB"
-date = "2019-07-31"
+date = "2023-07-31"
 description = "The story behind the early development and downfall of the programming language Erlang"
 tags = [
     "history",
