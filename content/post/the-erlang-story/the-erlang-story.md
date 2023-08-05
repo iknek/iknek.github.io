@@ -70,22 +70,23 @@ Then, in December of 1995, everything changed.
 
 ## The Big Break
 
-In December of 1995, a massive project at Ellemtel called AXE-N failed. It's failiure was such that even Ericsson AB's website quotes their staff magazine saying: 
+In December of 1995, a massive project at Ellemtel called AXE-N failed. It's failure was such that even Ericsson AB's website quotes their staff magazine saying:
+
 > _“People fainted at the meetings, some wept while others displayed no reaction at all; they appeared to be totally unmoved.”_ <cite>[^2]</cite>
 
 > [^2]: Ericsson [article](https://www.ericsson.com/en/about-us/history/changing-the-world/big-bang/axe-n) about the AXE-N project.
 
 The AXE-N, a switching system, was meant to be a hardware and software replacement for the older AXE10 systems, with the software developed in C++.
 
-With this collapse, however, the door opened for Erlang, which was chosen to be the replacement programming language (whilst the hardware was re-used). The project recieved a new name, too, now dubbed the AXD. In his article for HOPL III, Joe Armstrong anknowledged that without this event, the language would have never left the Ericsson lab. 
+With this collapse, however, the door opened for Erlang, which was chosen to be the replacement programming language (whilst the hardware was re-used). The project recieved a new name, too, now dubbed the AXD. In his article for HOPL III, Joe Armstrong anknowledged that without this event, the language would have never left the Ericsson lab.
 
-Instead, this became the largest Erlang project (most probably ever), employing over 60 Erlang developers. Additionally, all external marketing for the language was stopped, with focus being solidly redirected to internal development. By the launch of the AXD 301 switch in March of 1998, the system had 1,13 million lines of Erlang code (this figure grew to over 2.6 million across the AXD's lifetime). 
+Instead, this became the largest Erlang project (most probably ever), employing over 60 Erlang developers. Additionally, all external marketing for the language was stopped, with focus being solidly redirected to internal development. By the launch of the AXD 301 switch in March of 1998, the system had 1,13 million lines of Erlang code (this figure grew to over 2.6 million across the AXD's lifetime).
 
 {{< img src="/post/the-erlang-story/axd301.png" alt="Picture of an AXD 301 rack" class="horizontal-class" caption="An AXD301 rack. Credit: carritech.com">}}
 
-But number of lines of code isn't, nor should it be, impressive part. What truly showed the potential of Erlang was the fact that out of the 60-person team of programmers, the majority came from industrial backgrounds, with no prior knowledge of concurrent or functional programming! Instead, most of them were taught Erlang by Armstrong and his colleagues. 
+But number of lines of code isn't, nor should it be, impressive. What truly showed the potential of Erlang was the fact that out of the 60-person team of programmers, the majority came from industrial backgrounds, with no prior knowledge of concurrent or functional programming! Instead, most of them were taught Erlang by Armstrong and his colleagues.
 
-Furthermore, Armstrong claimed that by conservative estimates, one line of Erlang corresponded to about five lines of C, meaning that a corresponding system in C would have had over _6 million_ lines of code at launch. 
+Furthermore, Armstrong claimed that by conservative estimates, one line of Erlang corresponded to about five lines of C, meaning that a corresponding system in C would have had over _6 million_ lines of code at launch.
 
 This is made further impressive by the fact that the AXD 301 had an observed nine-nines reliability. This meant that over a 20 year period that the AXD 301 provided services, the services were online 99.9999999% of the time.
 
@@ -93,14 +94,14 @@ Coupled with an estimated 4x increase in productivity during the development cyc
 
 ## Downfall
 
-The Erlang team, however, didn't have much of a chance to celebrate. Even before the launch of the AXD 301 system, in February of 1998, Ericsson Radio Systems (a subset of Ericsson) had banned the use of Erlang within its company, claiming amongst other things that the use of a proprietary language wasn't beneficial. Many view this and other excuses as rather 'flimsy', which has given rise to a number of less-dicussed theories on the _actual_ reason for the ban...
+The Erlang team, however, didn't have much of a chance to celebrate. Even before the launch of the AXD 301 system, in February of 1998, Ericsson Radio Systems (a subset of Ericsson) had banned the use of Erlang within its company, claiming amongst other things that the use of a proprietary language wasn't beneficial. Many view this and other excuses as rather 'flimsy', which has given rise to a number of less-discussed theories on the _actual_ reason for the ban...
 
-Regardless, this effectively marked the end of Erlang within Ericsson as a whole. The team thus lobbied managment to release the language under an open-source license (with much of the lobbying work being done by Jane Walerud). Eventually, managment agreed, and Erlang was released into the wild in December of 1998.
+Regardless, this effectively marked the end of Erlang within Ericsson as a whole. The team thus lobbied management to release the language under an open-source license (with much of the lobbying work being done by Jane Walerud). Eventually, management agreed, and Erlang was released into the wild in December of 1998.
 
 ## Aftermath
 
-With Erlang free-to-use, the majority of the original development team (understandably) resigned from the company, starting Bluetail AB, with Jane Walerud as the CEO. Just two years later, Bluetail was sold to Nortel Networks for $152 million dollars. This triumphancy didn't last for longer, either, as the IT crash of the early 2000's came just half a year after the sale, leaving half the Bluetail team (un)employed at Nortel. 
+With Erlang free-to-use, the majority of the original development team (understandably) resigned from the company, starting Bluetail AB, with Jane Walerud as the CEO. Just two years later, Bluetail was sold to Nortel Networks for $152 million dollars. The feeling of victory didn't last for longer, either, as the IT crash of the early 2000's came just half a year after the sale, leaving half the Bluetail team (un)employed at Nortel.
 
 ## Closing Notes
 
-If you found this interesting, I'd highly encourage you to read Joe Armstrong entire artical. It's a very interesting and far more detailed (and technical) reaccounting of Erlang's development. Most of the information in this post comes from there, and a lecture from [John Hughes](https://en.wikipedia.org/wiki/John_Hughes_(computer_scientist)) which I had the privelage of attending at Chalmers.
+If you found this interesting, I'd highly encourage you to read Joe Armstrong's entire article. It's a very interesting and far more detailed (and technical) reaccounting of Erlang's development. Most of the information in this post comes from there, and a lecture from [John Hughes](<https://en.wikipedia.org/wiki/John_Hughes_(computer_scientist)>) which I had the privilege of attending at Chalmers.
