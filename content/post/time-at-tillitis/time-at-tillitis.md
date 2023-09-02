@@ -6,7 +6,6 @@ description = "An overview of Tillitis, the TKey, and my time spent working ther
 tags = [
     "authentication",
     "security",
-    "erlang",
 ]
 categories = [
     "authentication",
