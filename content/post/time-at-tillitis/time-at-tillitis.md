@@ -74,7 +74,9 @@ Another great benefit to the TKey is its versatility. Using the exact same open 
 ## My Time Spent Working at Tillitis 
 
 Honestly, it was a great experience. For starters, everyone who works there is great, and they were especially patient with me and all my questions! They have a great team which I think can take the TKey very far. 
+
 Speaking of the TKey, I think it’s a really unique, and valuable, security key, which has the potential to change how we handle authentication. There’s really no other contender who’s developing a key like Tillitis, in terms of functionality, and security features.
+
 Because of this uniqueness, compared to when I first started at Tillitis, I’ve learnt an incredible amount about not just the TKey, but also security from an implementation perspective.
 
 Another point really worth highlighting, in my opinion, is the fantastic company ethos. Every single person at Tillitis cares about security, and is passionate about making a truly great and open product, which provides a foundation for users to do as they wish. It’s a direct carry-over from Mullvad, who have an equally great ethos (and who have recently [campaigned against a proposed EU Chat Control 2](https://mullvad.net/en/chatcontrol)).
