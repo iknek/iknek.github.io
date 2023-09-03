@@ -1,4 +1,4 @@
-+++
+[Title](post/time-at-tillitis)+++
 title = "About Me"
 description = "A personal website and blog"
 date = "2023-07-25"
@@ -16,13 +16,13 @@ At the age of 5, I moved with my parents to England. A year later, we moved to S
 
 Following my middle and high school education at an International Baccalaureate school, I combined my love for academics and technology by pursuing a civilingenjörsutbildning in Informationsteknik (Software Engineering) at [Chalmers](https://chalmers.se/en).
 
-For the fourth year of my education, I'll be starting off my Master's degree with an exchange year in the Netherlands, at the [University of Groningen](https://www.rug.nl/)
+For the fourth year of my education, I'll be starting off my Master's degree with an exchange year in the Netherlands, at the [University of Groningen](https://www.rug.nl/).
 
 ## Work
 
 Whilst this site isn't meant to be a CV (you can find that on my LinkedIn), a quick overview feels appropriate. Alongside working as an in-store seller for Inet, I've also been a teacher assistant for a number of courses at Chalmers. I was also the treasurer for ArmIT, the IT division's corporate relations committee.
 
-This summer, I've been working at [Tillitis](https://tillitis.se), a spin-off company from Mullvad. Whilst it's still very small, Tillitis makes a very interesting USB security key, which is fully open-source. In the near future, I hope to write a blog post which goes into more depth on both the company, and the TKey.
+This summer, I've been working at [Tillitis](https://tillitis.se), a spin-off company from Mullvad. Whilst it's still very small, Tillitis makes a very interesting USB security key, which is fully open-source. My blog post on it can be found [here](https://iknek.github.io/blog/time-at-tillitis/).
 
 ## Interests
 
