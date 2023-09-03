@@ -26,6 +26,10 @@ This summer, I've been working at [Tillitis](https://tillitis.se), a spin-off co
 
 ## Interests
 
-During the last three years of my education, I've developed a strong interest in cyber security - both in terms of implementation, and testing. This is in large part thanks to my bachelor thesis work, which was centred around planning, and executing, a full pen-test of an IoT doorbell camera. And, naturally, my current job at Tillitis!
+During the last three years of my education, I've developed a strong interest in cyber security - both in terms of implementation, and testing. This is in large part thanks to my bachelor thesis work, which was centred around planning, and executing, a full pen-test of an IoT doorbell camera. And, naturally, my last job at Tillitis!
 
-Outside of academics and work, I have built computers since the age of 14, and been an active member on the Swedish tech forum ‘Sweclockers’ since 15. At 14, I wrote a guide on ifixit.com which currently has over 55,000 views. I'm also an active member of the fixed gear bike community in Sweden, and currently admin of the Fixed Gear Gothenburg Facebook group.
+Outside of academics and work, I have built computers since the age of 14, and been an active member on the Swedish tech forum ‘Sweclockers’ since 15. I'm also an active member of the fixed gear bike community in Sweden, and currently admin of the Fixed Gear Gothenburg Facebook group.
+
+## What am I up to nowadays?
+
+Well, I just moved to the Netherlands, and am looking forward to a school year abroad. The city of Groningen is fantastic, as are all the people I've met in the last 2 weeks. I'm currently not working, but projects like this site are sure to keep me busy. Who knows, maybe that'll change if my course-load proves to be light enough. 
