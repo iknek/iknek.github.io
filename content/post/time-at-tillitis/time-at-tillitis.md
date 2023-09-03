@@ -12,7 +12,6 @@ categories = [
     "security",
 ]
 url = "/blog/time-at-tillitis"
-series = ["Stories from the past"]
 aliases = ["security"]
 +++
 
@@ -21,7 +20,7 @@ This summer, I had the opportunity to join Tillitis as a summer intern, handling
 
 ## You may be wondering, what is Tillitis?
 
-Tillitis is a Swedish company, which started as a part of Mullvad (the VPN provider), and grew to be its own spin-off company. They’re still a relatively small startup, working on a new type of security key, called the TKey. ‘
+Tillitis is a Swedish company, which started as a part of Mullvad (the VPN provider), and grew to be its own spin-off company. They’re still a relatively small startup, working on a new type of security key, called the TKey. 
 
 ## What is the TKey?
 
@@ -73,15 +72,15 @@ Another great benefit to the TKey is its versatility. Using the exact same open 
 
 ## My Time Spent Working at Tillitis 
 
-Honestly, it was a great experience. For starters, everyone who works there is great, and they were especially patient with me and all my questions! They have a great team which I think can take the TKey very far. 
+Honestly, it was a great experience. For starters, everyone who works there is great, and they were especially patient with me and all my questions! They have a very smart and skilled team which I think can take the TKey very far. 
 
-Speaking of the TKey, I think it’s a really unique, and valuable, security key, which has the potential to change how we handle authentication. There’s really no other contender who’s developing a key like Tillitis, in terms of functionality, and security features.
+Speaking of the TKey itself, I think it’s a really unique, and valuable, security key which has the potential to change how we handle authentication. There’s really no other contender who’s developing a key like Tillitis, in terms of functionality and security features.
 
-Because of this uniqueness, compared to when I first started at Tillitis, I’ve learnt an incredible amount about not just the TKey, but also security from an implementation perspective.
+Personally speaking, the uniqueness of the TKey made it a challenge to fully understand at first, though that may just be me. However, this presented a fantastic opportunity for me, as I’ve learnt an incredible amount about not just the TKey, but also security from an implementation perspective.
 
 Another point really worth highlighting, in my opinion, is the fantastic company ethos. Every single person at Tillitis cares about security, and is passionate about making a truly great and open product, which provides a foundation for users to do as they wish. It’s a direct carry-over from Mullvad, who have an equally great ethos (and who have recently [campaigned against a proposed EU Chat Control 2](https://mullvad.net/en/chatcontrol)).
 
 ## Closing Notes
 
-One again, I’d like to thank everyone there for a wonderful, and very educational, time. 
+Once again, I’d like to thank everyone there for a wonderful, and very educational, time. 
 The TKey shop can be found [here](https:/shop.tillitis.se), the general website [here](https:/tillitis.se), and the dev-book [here](https:/dev.tillitis.se).
