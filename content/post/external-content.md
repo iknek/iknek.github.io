@@ -36,3 +36,7 @@ This was a project I did in the final year of middle school. It documents the en
 ## Spreadsheet of all the cars I've every driven
 
 This is a spreadsheet outlining every car I have ever driven, in addition to a general score out of 10, and a few comments on my impressions. Find it on [here](https://docs.google.com/spreadsheets/d/1TrLA6vbrQVKhTiFp5SKgJQ3BWEaIaHqtV1lkgNN7Juw/edit?usp=sharing).
+
+## Ifixit PS3 Controller Teardown
+
+This is a small teardown I wrote on Ifixit, in 2016. It documents the teardown of a broken Playstation 3 Controller. Find it [here](https://www.ifixit.com/Teardown/PS3+Wireless+Controller+Teardown/64801).
