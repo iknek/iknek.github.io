@@ -46,7 +46,7 @@ To use a TKey, one essentially needs two applications. The first is called the c
 
 The device app, which runs on the TKey itself, is responsible for the actual program logic. Once the device app is sent to the TKey, the first security feature, measured boot, is commenced. 
 
-Namely, the TKey measures the loaded device application before starting it, creating a hash digest measurement with BLAKE2s. This measurement is combined with the aforementioned UDS, to create a base secret called the Compound Device Identifier (CDI). Users also have the option to input a User Supplied String (USS) into the CDI, for additional security. The algorithm for the CDI is subsequently: 
+Namely, the TKey measures the loaded device application before starting it, creating a hash digest measurement with BLAKE2s. This measurement is combined with the aforementioned UDS, to create a base secret called the Compound Device Identifier (CDI). Users also have the option to input a User Supplied Secret (USS) into the CDI, for additional security. The algorithm for the CDI is subsequently: 
 
 ``` golang
 cdi = blake2s(UDS, blake2s(device_app), USS)
