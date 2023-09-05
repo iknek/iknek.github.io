@@ -80,6 +80,9 @@ Personally speaking, the uniqueness of the TKey made it a challenge to fully und
 
 Another point really worth highlighting, in my opinion, is the fantastic company ethos. Every single person at Tillitis cares about security, and is passionate about making a truly great and open product, which provides a foundation for users to do as they wish. It’s a direct carry-over from Mullvad, who have an equally great ethos (and who have recently [campaigned against a proposed EU Chat Control 2](https://mullvad.net/en/chatcontrol)).
 
+{{< img src="/post/time-at-tillitis/tkey2.png" alt="Picture of TKey on keychain with Tillitis strap" class="horizontal-class" caption="My own trusty TKey">}}
+
+
 ## Closing Notes
 
 Once again, I’d like to thank everyone there for a wonderful, and very educational, time. 
