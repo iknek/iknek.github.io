@@ -28,7 +28,7 @@ Tillitis is a Swedish company, which started as a part of Mullvad (the VPN provi
 
 The TKey is not a traditional USB which stores information. On the contrary, it’s a small FPGA computer, sporting a 32 bit RISC-V CPU. This CPU is complemented by a number of things, including a touch sensor, 128 kiB of RAM for applications, a true random number generator, and a status LED controlled by the CPU. For communication, a serial to USB CDC adapter is built-in.
 
-Currently, there are two variants of the TKey - that being the regular (locked version), and the unlocked. As TKey unlocked is not up for sale yet, though it will be very shortly, I’ll explain the regular, locked, variant. 
+Currently, there are two variants of the TKey - that being the regular (locked version), and the unlocked. ~~As TKey unlocked is not up for sale yet, though it will be very shortly, I’ll explain the regular, locked, variant.~~ Edit: The unlocked version is now up for sale! Find it [here](https://shop.tillitis.se/).
 
 Before being sent to a customer, each (locked) TKey goes through a provisioning process, during which a bitstream is created and flashed to the device. This is essentially the FPGA configuration, and it includes the firmware in the ROM (not accessible to users), as well as the:
 - Unique Device Identity (UDI)
@@ -81,7 +81,6 @@ Personally speaking, the uniqueness of the TKey made it a challenge to fully und
 Another point really worth highlighting, in my opinion, is the fantastic company ethos. Every single person at Tillitis cares about security, and is passionate about making a truly great and open product, which provides a foundation for users to do as they wish. It’s a direct carry-over from Mullvad, who have an equally great ethos (and who have recently [campaigned against a proposed EU Chat Control 2](https://mullvad.net/en/chatcontrol)).
 
 {{< img src="/post/time-at-tillitis/tkey2.png" alt="Picture of TKey on keychain with Tillitis strap" class="horizontal-class" caption="My own trusty TKey">}}
-
 
 ## Closing Notes
 
