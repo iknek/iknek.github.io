@@ -41,7 +41,13 @@ With that identified, the login portal can be revisited. Leaving the username bl
 
 {{< img src="/post/shodan-lantronix-dork/lant2.png" alt="Image of Lantronix web portal." class="horizontal-class" caption="The Lantronix Web Portal (sensitive information redacted)">}}
 
+To conclude, a dork was promised and a dork shall be recieved: 
+
+    "Lantronix" "Device ID: " port:9999 
+ 
+
 ## Final Thoughts
 
 I think that its important to note, despite the extreme ease of the attack and the relatively low impact one miss-configured IoT device, that this is just one of easily hundreds of exposed IoT devices, that anyone could find and access in just a few minutes. 
+
 With the solution (changing the default password or even just hiding the Device ID) being so simple, there is no reason for the vulnerability to exist in the first place. 
