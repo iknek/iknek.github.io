@@ -37,7 +37,7 @@ It's at this point I found an interesting note in a user manual. The default pas
 
 {{< img src="/post/shodan-lantronix-dork/lant3.png" alt="Image of the port 9999 response in Shodan (sensitive information redacted)." class="horizontal-class" caption="Image of the port 9999 response in Shodan (sensitive information redacted)">}}
 
-With that identified, the login portal can be revisited. Leaving the username blank, and setting the last 8 Device ID characters into the password, we're granted access!  
+With that identified, the login portal can be revisited. Leaving the username blank, and setting the last 8 Device ID characters as the password, we're granted access!  
 
 {{< img src="/post/shodan-lantronix-dork/lant2.png" alt="Image of Lantronix web portal." class="horizontal-class" caption="The Lantronix Web Portal (sensitive information redacted)">}}
 
@@ -48,6 +48,6 @@ To conclude, a dork was promised and a dork shall be recieved:
 
 ## Final Thoughts
 
-I think that its important to note, despite the extreme ease of the attack and the relatively low impact one miss-configured IoT device, that this is just one of easily hundreds of exposed IoT devices, that anyone could find and access in just a few minutes. 
+I think that its important to note, despite the extreme ease of the attack and the relatively low impact one miss-configured IoT device has, that this is just one of easily hundreds of such exposed IoT devices, that anyone could find and access in just a few minutes. 
 
 With the solution (changing the default password or even just hiding the Device ID) being so simple, there is no reason for the vulnerability to exist in the first place. 
