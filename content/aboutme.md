@@ -22,7 +22,7 @@ For the fourth year of my education, I'll be starting off my Master's degree wit
 
 Whilst this site isn't meant to be a CV (you can find that on my LinkedIn), a quick overview feels appropriate. Alongside working as an in-store seller for Inet, I've also been a teacher assistant for a number of courses at Chalmers. I was also the treasurer for ArmIT, the IT division's corporate relations committee.
 
-This summer, I've been working at [Tillitis](https://tillitis.se), a spin-off company from Mullvad. Whilst it's still very small, Tillitis makes a very interesting USB security key, which is fully open-source. My blog post on it can be found [here](https://iknek.github.io/blog/time-at-tillitis/).
+This summer, I worked at [Tillitis](https://tillitis.se), a spin-off company from Mullvad. Whilst it's still very small, Tillitis makes a very interesting USB security key, which is fully open-source. My blog post on it can be found [here](https://iknek.github.io/blog/time-at-tillitis/).
 
 ## Interests
 
@@ -32,4 +32,5 @@ Outside of academics and work, I have built computers since the age of 14, and b
 
 ## What am I up to nowadays?
 
-Well, I just moved to the Netherlands, and am looking forward to a school year abroad. The city of Groningen is fantastic, as are all the people I've met in the last 2 weeks. I'm currently not working, but projects like this site are sure to keep me busy. Who knows, maybe that'll change if my course-load proves to be light enough. 
+Well, I just moved to the Netherlands, and am looking forward to a school year abroad. The city of Groningen is fantastic, as are all the people I've met in the last 3 months. 
+Recently I got an internship at ASML via the University of Groningen. In my free-time, I've found myself doing security research, primarily through public bug bounties and VDPs. 
