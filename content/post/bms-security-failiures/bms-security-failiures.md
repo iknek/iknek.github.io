@@ -11,12 +11,12 @@ categories = [
     "authentication",
     "security",
 ]
-url = "/blog/shodan-lantronix-dork"
+url = "/blog/bms-security-failiures"
 series = ["Security"]
 aliases = ["security"]
 +++
 
-I've been debating whether or not I should write this blog post, as it’s another one of those posts which talks about painfully simple, yet damaging, cybersecurity failures. However, it’s so simple that any ill-meaning party can figure it out themselves with a small amount of research and time, and plenty of other research already exists on this topic. Also, my blog gets almost no views, so I've decided to go ahead. 
+This is a post which dicusses BMS (building management systems), and the horrible state of their security. 
 
 <!--more-->
 
