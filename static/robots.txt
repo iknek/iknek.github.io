@@ -1,4 +1,3 @@
-robots.txt
 User-agent: googlebot-image
 Disallow: /
 User-agent: *
