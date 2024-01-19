@@ -41,3 +41,5 @@ url = "https://www.linkedin.com/in/imad-alihodzic/"
 key = 2
 name = "Email"
 url = "mailto:imad.alihodzic@yahoo.com"
+
+enableRobotsTXT = true
