@@ -3,4 +3,4 @@ Disallow: /search
 Disallow: /category/
 Disallow: /tag/
 Allow: /
-Sitemap: iknek.github.io
+Sitemap: https://iknek.github.io/sitemap.xml
