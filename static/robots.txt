@@ -1,6 +1,7 @@
 User-agent: *
 Disallow: /search
-Disallow: /category/
-Disallow: /tag/
+Disallow: /categories/
+Disallow: /tags/
+Disallow: /blog
 Allow: /
 Sitemap: https://iknek.github.io/sitemap.xml
