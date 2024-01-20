@@ -1,5 +1,6 @@
-User-agent: googlebot-image
-Disallow: /
 User-agent: *
-Disallow: 
-Sitemap: https://iknek.github.io/sitemap.xml
+Disallow: /search
+Disallow: /category/
+Disallow: /tag/
+Allow: /
+Sitemap: iknek.github.io
