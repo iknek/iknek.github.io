@@ -12,6 +12,7 @@
 
 {{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
 <link href="{{ $style.RelPermalink }}" rel="stylesheet">
+<meta name="description" content="A personal blog and website where you can learn more about me and what I do." />    
 
 <link rel="stylesheet" href="/css/main.css">
 
