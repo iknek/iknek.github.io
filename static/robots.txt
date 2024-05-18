@@ -2,5 +2,8 @@ User-agent: *
 Disallow: /search
 Disallow: /categories/
 Disallow: /tags/
+Disallow: /post/nixu-hacking-ctf/*.png
+Disallow: /post/nixu-hacking-ctf/*.md
+
 Allow: /
 Sitemap: https://iknek.github.io/sitemap.xml
