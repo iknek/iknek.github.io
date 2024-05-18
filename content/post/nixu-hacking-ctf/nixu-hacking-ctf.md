@@ -32,7 +32,7 @@ With this information, my mind immediately turned to SQL injection, so I decide 
 ```
 With the previous command sent as the username, I was rewarded with a new page! 
 
-{{< img src="/post/nixu-hacking-ctf/main-page.png" alt="Inspector field, showing decoded value." class="horizontal-class-two" caption="Inspector Field">}}
+{{< img src="/post/nixu-hacking-ctf/main-page.png" alt="Main page." class="horizontal-class-two" caption="The Main Page in Question">}}
 
 
 ## Going Down False Paths
@@ -57,7 +57,7 @@ Set-Cookie: session=eyJpZCI6MSwibG9nZ2VkaW4iOnRydWUsInVzZXJuYW1lIjoiYWRtaW4ifQ.Z
 More specifically, what stuck out to me was the set-cookie header. Namely, the cookie looked like it was a JWT token, divided into a header, payload, and signature (also tokens tend to start with ‘ey’ in base64, making them easy to spot). 
 Indeed, this was confirmed when I highlighted the header and looked at the Inspector tab in Burp Suite, which automatically decoded it: 
 
-{{< img src="/post/nixu-hacking-ctf/inspector.png" alt="Inspector field, showing decoded value." class="horizontal-class-two" caption="Inspector Field">}}
+{{< img src="/post/nixu-hacking-ctf/inspector.png" alt="Inspector field, showing decoded value." class="my-image-class" caption="Inspector Field">}}
 
 What to do with this information, though? Again, the HTTP headers provided another clue, in the form of the ‘Vary’ field. 
 After a quick web search, it turned out that it’s sent by a server to indicate which request headers the server uses for content negotiation (i.e. for deciding which version of a page to return). For example, a web page might vary the response based on the user agent, in order to serve different layouts for mobile vs. desktop users. 
