@@ -52,10 +52,11 @@ Content-Type: text/html; charset=utf-8
 Content-Length: 3209
 Connection: close
 Vary: Cookie
-Set-Cookie: session=eyJpZCI6MSwibG9nZ2VkaW4iOnRydWUsInVzZXJuYW1lIjoiYWRtaW4ifQ.
-            Zf2GNQ.Goy6u9Pc6z-JG0J6VkamSnSZnJ4; HttpOnly; Path=/
+Set-Cookie: 
+session=eyJpZCI6MSwibG9nZ2VkaW4iOnRydWUsInVzZXJuYW1lIjoiYWRtaW4ifQ.
+Zf2GNQ.Goy6u9Pc6z-JG0J6VkamSnSZnJ4; HttpOnly; Path=/
 ```
-More specifically, what stuck out to me was the set-cookie header. Namely, the cookie looked like it was a JWT token, divided into a header, payload, and signature (also tokens tend to start with ‘ey’ in base64, making them easy to spot). 
+More specifically, what stuck out to me was the set-cookie header (split accross multiple lines just for formatting reasons). Namely, the cookie looked like it was a JWT token, divided into a header, payload, and signature (also tokens tend to start with ‘ey’ in base64, making them easy to spot). 
 Indeed, this was confirmed when I highlighted the header and looked at the Inspector tab in Burp Suite, which automatically decoded it: 
 
 {{< img src="/post/nixu-hacking-ctf/inspector.png" alt="Inspector field, showing decoded value." class="my-image-class" caption="Inspector Field">}}
