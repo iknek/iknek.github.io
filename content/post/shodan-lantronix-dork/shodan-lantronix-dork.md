@@ -30,7 +30,7 @@ Many such devices are configurable via a web interface, accessible via HTTP on a
 
 ## A Closer Look
 
-As afformentioned, I ended up coming across a Lantronix device in the wild. Before doing anything else, I checked if the organization who owned the device had a bug bounty set up, which they did! Safe in the knowledge that what I was doing was legal, I tried to see what was behind each exposed port for the IP address. One of those lead to a log-in page, for the Lantronix device. With no valid combination of "admin" and "pass" or "password", I resorted to doing a simple web search for default Lantronix device passwords.
+As afformentioned, I ended up coming across a Lantronix device in the wild. Before doing anything else, I checked if the organization who owned the device had a bug bounty set up, which they did! Safe in the knowledge that what I was doing was legal, I tried to see what was behind each exposed port for the IP address. One of those lead to a log-in page - for the Lantronix device. With no valid combination of "admin" and "pass" or "password", I resorted to doing a simple web search for default Lantronix device passwords.
 
 ## The Exploit
 It's at this point I found an interesting note in a user manual. The default password is, in-fact, the last 8 characters of the Device ID! Going back to Shodan, we find none other than the Device ID printed in the console history on port 9999. 
@@ -44,10 +44,13 @@ With that identified, the login portal can be revisited. Leaving the username bl
 To conclude, a dork was promised and a dork shall be recieved: 
 
     "Lantronix" "Device ID: " port:9999 
- 
+
+### Also Worth Noting
+In some cases, devices can be missconfigured, allowing for fully unauthenticated access via Telnet.
 
 ## Final Thoughts
 
-I think that its important to note, despite the extreme ease of the attack and the relatively low impact one miss-configured IoT device has, that this is just one of easily hundreds of such exposed IoT devices, that anyone could find and access in just a few minutes. 
+I think that its important to note, despite the extreme ease of the attack and the relatively low impact one miss-configured IoT device may have, that this is just one of easily hundreds of such exposed IoT devices, that anyone could find and access in just a few minutes. 
+Also, despite the ease of the 'attack', I have run accross this issue numerous times, accross a number of large organizations.
 
 With the solution (changing the default password or even just hiding the Device ID) being so simple, there is no reason for the vulnerability to exist in the first place. 

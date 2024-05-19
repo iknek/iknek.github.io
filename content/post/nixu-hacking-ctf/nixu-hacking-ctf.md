@@ -32,7 +32,7 @@ With this information, my mind immediately turned to SQL injection, so I decide 
 ```
 With the previous command sent as the username, I was rewarded with a new page! 
 
-{{< img src="/post/nixu-hacking-ctf/main-page.png" alt="Main page." class="horizontal-class-two" caption="The Main Page in Question">}}
+{{< img src="/post/nixu-hacking-ctf/main-page.png" alt="Main page." class="my-image-class" caption="The Main Page in Question">}}
 
 
 ## Going Down False Paths
