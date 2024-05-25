@@ -15,7 +15,7 @@ series = ["Pentests"]
 aliases = ["pentest"]
 +++
 
-I recently stumbled across the Nixu Corporation’s CTF page, and decided to try my hand at the Hackin challenge. 
+I recently stumbled across the Nixu Corporation’s CTF page, and decided to try my hand at the 'Hackin' challenge. 
 Please note that whilst, yes, I am publishing this on a public blog, this page will not be indexed, and the job posting which the CTF was linked from is now gone, so the chance of me ruining the CTF is near non-existent.
 
 <!--more-->
@@ -44,7 +44,7 @@ This consisted of an IP lookup, and a port scan courtesy of [shodan.io](https://
 ## A Closer Look 
 With this lead going nowhere, I decided to subsequently return back to the previously found page, and make good use of my Burp Suite Pro trial. Looking at the response to my post message, in-which the username is sent as cleartext, I noticed something rather interesting about the headers: 
 
-``` http 
+```` http 
 HTTP/1.1 200 OK
 Server: nginx
 Date: Fri, 22 Mar 2024 13:23:01 GMT
@@ -52,10 +52,14 @@ Content-Type: text/html; charset=utf-8
 Content-Length: 3209
 Connection: close
 Vary: Cookie
-Set-Cookie: 
-session=eyJpZCI6MSwibG9nZ2VkaW4iOnRydWUsInVzZXJuYW1lIjoiYWRtaW4ifQ.
- Zf2GNQ.Goy6u9Pc6z-JG0J6VkamSnSZnJ4; HttpOnly; Path=/
-```
+Set-Cookie: session=
+ eyJpZCI6MSwibG9nZ2VkaW4iOnRydWUs
+ InVzZXJuYW1lIjoiYWRtaW4ifQZf2GNQ.
+ Goy6u9Pc6z-JG0J6VkamSnSZnJ4; 
+
+HttpOnly; Path=/
+````
+
 More specifically, what stuck out to me was the set-cookie header (split accross multiple lines just for formatting reasons). Namely, the cookie looked like it was a JWT token, divided into a header, payload, and signature (also tokens tend to start with ‘ey’ in base64, making them easy to spot). 
 Indeed, this was confirmed when I highlighted the header and looked at the Inspector tab in Burp Suite, which automatically decoded it: 
 

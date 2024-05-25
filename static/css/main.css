@@ -33,3 +33,9 @@ figure figcaption {
     font-family: 'Fira Mono';
     font-size: x-large;
   }
+
+  .code-block {
+    white-space: pre-wrap;    /* Allows wrapping of preformatted text */
+    word-wrap: break-word;    /* Forces long words to wrap */
+    overflow-wrap: break-word; /* Ensures long words break */
+}
