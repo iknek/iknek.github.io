@@ -20,7 +20,7 @@ This post dicusses building management systems (BMS), the (horrible) state of th
 
 <!--more-->
 
-## What are Building Manegemnt Systems?
+## What are Building Management Systems?
 
 BMS are computer-based control systems, installed in buildings to manage and monitor the mechanical and electrical equipment such as ventilation, lighting, power, and fire systems. They are installed in most new buildings (and many old ones), as they can automatically and manually be optimized for efficiency, and comfort. Essentially, a BMS functions as the brain of a building, ensuring systems (such as HVAC) operate together efficiently.
 
