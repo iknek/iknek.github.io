@@ -1,7 +1,7 @@
 +++
 title = "About Me"
 description = "A personal website and blog"
-date = "2023-07-25"
+date = "2023-11-12"
 aliases = ["about-me", "aboutsite", "contact"]
 author = "Imad"
 +++
