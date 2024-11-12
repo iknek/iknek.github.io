@@ -1,7 +1,7 @@
 +++
 author = "Imad Alihodzic"
 title = "My Homelab Adventures"
-date = "2024-05-18"
+date = "2024-11-12"
 description = "The trials and tribulations of setting up a homelab server"
 tags = [
     "homelab",
