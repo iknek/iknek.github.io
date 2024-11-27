@@ -5,5 +5,8 @@ Disallow: /tags/
 Disallow: /post/nixu-hacking-ctf/*.png
 Disallow: /post/nixu-hacking-ctf/*.md
 
-Allow: /
+# For the stupid bots which insist on scanning this site....
+Disallow: /cgi-bin/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
 Sitemap: https://iknek.github.io/sitemap.xml
