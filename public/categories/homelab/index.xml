@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homelab on Imad Alihodzic</title>
+    <link>http://localhost:1313/categories/homelab/</link>
+    <description>Recent content in Homelab on Imad Alihodzic</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/homelab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Homelab Adventures</title>
+      <link>http://localhost:1313/blog/my-homelab-adventures/</link>
+      <pubDate>Tue, 12 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/my-homelab-adventures/</guid>
+      <description>&lt;p&gt;For quite a while, I have considered purchasing a server. Like most persons looking into acquiring greatly depreciated enterprise hardware, I’ve conceived many a justification for such a purchase, though ultimately have had to concede that it’s purely for the purpose of tinkering.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

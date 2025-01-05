@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IoT on Imad Alihodzic</title>
+    <link>http://localhost:1313/tags/iot/</link>
+    <description>Recent content in IoT on Imad Alihodzic</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/iot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Tragic Security Implemented in Building Management Systems</title>
+      <link>http://localhost:1313/blog/bms-security-failiures/</link>
+      <pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/bms-security-failiures/</guid>
+      <description>&lt;p&gt;This post dicusses building management systems (BMS), the (horrible) state of their security, and the security impact that these systems can have.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Shodan Lantronix Dork</title>
+      <link>http://localhost:1313/blog/shodan-lantronix-dork/</link>
+      <pubDate>Mon, 06 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/shodan-lantronix-dork/</guid>
+      <description>&lt;p&gt;Recently I&amp;rsquo;ve found myself sitting on Shodan.io, trying out different things and generally exploring the tool. By chance, I ended up finding a Lantronix device, which is where things got interesting!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How Not To Implement Security: An IoT Doorbell Camera Pentest</title>
+      <link>http://localhost:1313/blog/prokord-pentest/</link>
+      <pubDate>Fri, 28 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/prokord-pentest/</guid>
+      <description>&lt;p&gt;This is an &amp;lsquo;informalized&amp;rsquo; summary of my bachelor thesis, written with 5 other persons in the spring of 2023.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

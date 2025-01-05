@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming on Imad Alihodzic</title>
+    <link>http://localhost:1313/tags/programming/</link>
+    <description>Recent content in Programming on Imad Alihodzic</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 31 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Rise &amp; Fall of Erlang at Ericsson AB</title>
+      <link>http://localhost:1313/blog/the-erlang-story/</link>
+      <pubDate>Mon, 31 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/the-erlang-story/</guid>
+      <description>&lt;p&gt;This is the story of Erlang, a programming language that was maybe too good for its own sake.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

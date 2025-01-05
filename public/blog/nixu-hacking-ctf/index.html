@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta name="keywords" content="Imad Alihodzic, iknek">
+
+    <title>
+Tackling the Nixu Hacking CTF Challenge | Imad Alihodzic
+</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="generator" content="Hugo 0.140.2">
+
+
+<link rel="canonical" href="http://localhost:1313/blog/nixu-hacking-ctf/" >
+<link href="/sass/main.min.a8be33730f01e46b6e968a84ed6b211a9d1286d34f7e143c012da9c14cd56400.css" rel="stylesheet">
+<meta name="description" content="A personal blog and website where you can learn more about me and what I do." />    
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+</head>
+
+<body>
+
+    <div class="flexWrapper">
+        <header class="headerWrapper">  
+    <div class="header">
+        <div>
+            <a href="http://localhost:1313/">
+                <span class="terminal">iknek@github.io ~ $</span>
+            </a>
+        </div>
+        <input class="side-menu" type="checkbox" id="side-menu">
+        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+        <nav class="headerLinks">
+            <ul>
+                
+                <li>
+                    <a href="http://localhost:1313/blog" title="" >
+                        ~/Blog</a>
+                </li>
+                
+                <li>
+                    <a href="http://localhost:1313/aboutsite" title="" >
+                        ~/About this site</a>
+                </li>
+                
+                <li>
+                    <a href="http://localhost:1313/aboutme" title="" >
+                        ~/About Me</a>
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="content">
+            <main class="main">
+                
+<div class="postWrapper">
+    <h1>Tackling the Nixu Hacking CTF Challenge</h1>
+    
+    <section class="postMetadata">
+        <dl>
+            
+                
+<dt>tags</dt>
+<dd><span></span>
+    <a href="/tags/security/">#Security</a><span></span>
+    <a href="/tags/pentesting/">#Pentesting</a></dd>
+            
+            
+            
+                
+<dt>categories</dt>
+<dd><span></span>
+    <a href="/categories/pentesting/">Pentesting</a></dd>
+            
+            
+                <dt>published</dt>
+                
+                <dd><time datetime="2024-05-18">May 18, 2024</time></dd>
+            
+            
+                <dt>reading time</dt>
+                <dd>5 minutes</dd>
+            
+        </dl>
+    </section>
+    
+    <div>
+        <p>I recently stumbled across the Nixu Corporation’s CTF page, and decided to try my hand at the &lsquo;Hackin&rsquo; challenge.
+Please note that whilst, yes, I am publishing this on a public blog, this page will not be indexed, and the job posting which the CTF was linked from is now gone, so the chance of me ruining the CTF is near non-existent.</p>
+<h2 id="first-clue">First clue</h2>
+<p>This challenge begins with a login page, asking for a username and password. I decided to start by writing a random input for the username and password which, interestingly, gave me my first clue - an error exclaiming:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SQL</span> error: Incorrect username <span style="color:#f92672">/</span> password <span style="color:#f92672">!</span>
+</span></span></code></pre></div><p>With this information, my mind immediately turned to SQL injection, so I decide to try the classic command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#e6db74">&#39; or 1=1; --
+</span></span></span></code></pre></div><p>With the previous command sent as the username, I was rewarded with a new page!</p>
+<figure>
+    <img src="/post/nixu-hacking-ctf/main-page.png" alt="Main page." class="my-image-class">
+    <figcaption>The Main Page in Question</figcaption>
+</figure>
+
+<h2 id="going-down-false-paths">Going Down False Paths</h2>
+<p>Obviously, I wanted to find a way deeper inside, but I wasn’t sure how to proceed, as the page seemed not to have any obvious issue when using the Inspector function in Firefox. I figured the best thing to do, thus, was collect some more information on the system.</p>
+<p>This consisted of an IP lookup, and a port scan courtesy of <a href="https://www.shodan.io">shodan.io</a> and <a href="https://www.criminalip.io">criminalip.io</a>. Quickly, however, I realised that this wasn’t going to get me far due to the fact that other Nixu CTF challenges are also hosted on the same machine, on different ports.</p>
+<h2 id="a-closer-look">A Closer Look</h2>
+<p>With this lead going nowhere, I decided to subsequently return back to the previously found page, and make good use of my Burp Suite Pro trial. Looking at the response to my post message, in-which the username is sent as cleartext, I noticed something rather interesting about the headers:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#66d9ef">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span> <span style="color:#ae81ff">200</span> <span style="color:#a6e22e">OK</span>
+</span></span><span style="display:flex;"><span>Server<span style="color:#f92672">:</span> <span style="color:#ae81ff">nginx</span>
+</span></span><span style="display:flex;"><span>Date<span style="color:#f92672">:</span> <span style="color:#ae81ff">Fri, 22 Mar 2024 13:23:01 GMT</span>
+</span></span><span style="display:flex;"><span>Content-Type<span style="color:#f92672">:</span> <span style="color:#ae81ff">text/html; charset=utf-8</span>
+</span></span><span style="display:flex;"><span>Content-Length<span style="color:#f92672">:</span> <span style="color:#ae81ff">3209</span>
+</span></span><span style="display:flex;"><span>Connection<span style="color:#f92672">:</span> <span style="color:#ae81ff">close</span>
+</span></span><span style="display:flex;"><span>Vary<span style="color:#f92672">:</span> <span style="color:#ae81ff">Cookie</span>
+</span></span><span style="display:flex;"><span>Set-Cookie<span style="color:#f92672">:</span> <span style="color:#ae81ff">session=</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">eyJpZCI6MSwibG9nZ2VkaW4iOnRydWUs</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">InVzZXJuYW1lIjoiYWRtaW4ifQZf2GNQ.</span>
+</span></span><span style="display:flex;"><span> <span style="color:#ae81ff">Goy6u9Pc6z-JG0J6VkamSnSZnJ4; </span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HttpOnly; Path=/
+</span></span></code></pre></div><p>More specifically, what stuck out to me was the set-cookie header (split accross multiple lines just for formatting reasons). Namely, the cookie looked like it was a JWT token, divided into a header, payload, and signature (also tokens tend to start with ‘ey’ in base64, making them easy to spot).
+Indeed, this was confirmed when I highlighted the header and looked at the Inspector tab in Burp Suite, which automatically decoded it:</p>
+<figure>
+    <img src="/post/nixu-hacking-ctf/inspector.png" alt="Inspector field, showing decoded value." class="my-image-class">
+    <figcaption>Inspector Field</figcaption>
+</figure>
+
+<p>What to do with this information, though? Again, the HTTP headers provided another clue, in the form of the ‘Vary’ field.
+After a quick web search, it turned out that it’s sent by a server to indicate which request headers the server uses for content negotiation (i.e. for deciding which version of a page to return). For example, a web page might vary the response based on the user agent, in order to serve different layouts for mobile vs. desktop users.</p>
+<h2 id="cookie-based-shenanigans">Cookie-Based Shenanigans</h2>
+<p>In the case of the CTF page at hand, the response obviously varied on the cookie. This introduced two new questions:
+How do we change the value of the cookie the server returns to us?
+What do we need to change the cookie to be?</p>
+<p>I decided to start by putting the entire cookie into a JWT decoder. Interestingly, the payload wasn’t a valid JSON object. Furthermore, after sending a number of post requests to the web page, I noticed that the payload and (subsequently) the signature changed for each request (though not in any consistent way such as being based on time).</p>
+<p>As such, I decided to focus my attention on the first part of the cookie which, as seen previously, contained the username and id of the admin user, as well as boolean for if they are logged in.</p>
+<p>With this in mind, I returned to my first question, and realised that the only way I could pass along  direct input to the page, and subsequently the cookie, was through the username and password fields (if not considering http request smuggling and such attacks).
+Considering the fact that the input fields were, as previously shown, susceptible to sql injection, I returned to more testing there.</p>
+<h2 id="big-break">Big Break</h2>
+<p>After some googling, I found a useful guide with a number of tips. I thus began by fingerprinting, using the following command which selects the first username field, and joins the version version information to it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT &#39;</span><span style="color:#ae81ff">0</span><span style="color:#e6db74">&#39;, @@VERSION, &#39;</span><span style="color:#66d9ef">c</span><span style="color:#e6db74">&#39;, &#39;</span>d<span style="color:#e6db74">&#39; -- -
+</span></span></span></code></pre></div><p>This proved successful, and after checking the provided cookie, I found it to be running version 10.6.10 of MariaDB.</p>
+<p>Next, I decided to try and identify the database table(s). After some trial and error, this was accomplished by running the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT &#39;</span><span style="color:#ae81ff">1</span><span style="color:#e6db74">&#39;, table_name, &#39;</span><span style="color:#ae81ff">3</span><span style="color:#e6db74">&#39;, &#39;</span><span style="color:#ae81ff">4</span><span style="color:#e6db74">&#39; 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  FROM information_schema.tables 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  WHERE table_schema = database() -- -
+</span></span></span></code></pre></div><p>After identify the table name, it was then possible to iterate through the column names, allowing me to identify a total of 8 attributes, namely ‘id,username,password,email,USER,HOST,CURRENT_CONNECTIONS, and TOTAL_CONNECTIONS’.</p>
+<p>Knowing the table name, its attributes, and the fact that the admin account is simply called ‘admin’, we can then run this command to retrieve the password:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39; UNION SELECT &#39;</span><span style="color:#ae81ff">0</span><span style="color:#e6db74">&#39;, password, &#39;</span><span style="color:#ae81ff">3</span><span style="color:#e6db74">&#39;, &#39;</span><span style="color:#ae81ff">4</span><span style="color:#e6db74">&#39; 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  FROM accounts LIMIT 1 OFFSET 0 -- -
+</span></span></span></code></pre></div><p>With that, I had the admin password, and using it to log in, I was greeted by the congratulatory page marking the end of the CTF!</p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>Overall I found this to be a very entertaining CTF. However, I did find myself chasing down a lot of false leads, which I think could have been avoided. Thus it really reminded me of the importance of occasionally taking a step back, re-evaluating what I know, and then proceeding with a new plan.</p>
+    </div>
+</div>
+
+            </main>
+        </div>
+
+
+        
+    </div>
+
+</body>
+
+</html>

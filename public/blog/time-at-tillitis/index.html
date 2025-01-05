@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta name="keywords" content="Imad Alihodzic, iknek">
+
+    <title>
+Reflecting on (my Time at) Tillitis | Imad Alihodzic
+</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="generator" content="Hugo 0.140.2">
+
+
+<link rel="canonical" href="http://localhost:1313/blog/time-at-tillitis/" >
+<link href="/sass/main.min.a8be33730f01e46b6e968a84ed6b211a9d1286d34f7e143c012da9c14cd56400.css" rel="stylesheet">
+<meta name="description" content="A personal blog and website where you can learn more about me and what I do." />    
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+</head>
+
+<body>
+
+    <div class="flexWrapper">
+        <header class="headerWrapper">  
+    <div class="header">
+        <div>
+            <a href="http://localhost:1313/">
+                <span class="terminal">iknek@github.io ~ $</span>
+            </a>
+        </div>
+        <input class="side-menu" type="checkbox" id="side-menu">
+        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+        <nav class="headerLinks">
+            <ul>
+                
+                <li>
+                    <a href="http://localhost:1313/blog" title="" >
+                        ~/Blog</a>
+                </li>
+                
+                <li>
+                    <a href="http://localhost:1313/aboutsite" title="" >
+                        ~/About this site</a>
+                </li>
+                
+                <li>
+                    <a href="http://localhost:1313/aboutme" title="" >
+                        ~/About Me</a>
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="content">
+            <main class="main">
+                
+<div class="postWrapper">
+    <h1>Reflecting on (my Time at) Tillitis</h1>
+    
+    <section class="postMetadata">
+        <dl>
+            
+                
+<dt>tags</dt>
+<dd><span></span>
+    <a href="/tags/authentication/">#Authentication</a><span></span>
+    <a href="/tags/security/">#Security</a></dd>
+            
+            
+            
+                
+<dt>categories</dt>
+<dd><span></span>
+    <a href="/categories/authentication/">Authentication</a><span></span>
+    <a href="/categories/security/">Security</a></dd>
+            
+            
+                <dt>published</dt>
+                
+                <dd><time datetime="2023-09-02">September 2, 2023</time></dd>
+            
+            
+                <dt>reading time</dt>
+                <dd>6 minutes</dd>
+            
+        </dl>
+    </section>
+    
+    <div>
+        <p>This summer, I had the opportunity to join Tillitis as a summer intern, handling their order logistics, in addition to working on device and client apps. In this post, I’ll introduce the TKey, and reflect on my time at Tillitis.</p>
+<h2 id="you-may-be-wondering-what-is-tillitis">You may be wondering, what is Tillitis?</h2>
+<p>Tillitis is a Swedish company, which started as a part of Mullvad (the VPN provider), and grew to be its own spin-off company. They’re still a relatively small startup, working on a new type of security key, called the TKey.</p>
+<h2 id="what-is-the-tkey">What is the TKey?</h2>
+<figure>
+    <img src="/post/time-at-tillitis/key.jpg" alt="Picture of the Tkey" class="horizontal-class">
+    <figcaption>Picture of the Tkey. Credit: Tillitis</figcaption>
+</figure>
+
+<p>The TKey is not a traditional USB which stores information. On the contrary, it’s a small FPGA computer, sporting a 32 bit RISC-V CPU. This CPU is complemented by a number of things, including a touch sensor, 128 kiB of RAM for applications, a true random number generator, and a status LED controlled by the CPU. For communication, a serial to USB CDC adapter is built-in.</p>
+<p>Currently, there are two variants of the TKey - that being the regular (locked version), and the unlocked. <del>As TKey unlocked is not up for sale yet, though it will be very shortly, I’ll explain the regular, locked, variant.</del> Edit: The unlocked version is now up for sale! Find it <a href="https://shop.tillitis.se/">here</a>.</p>
+<p>Before being sent to a customer, each (locked) TKey goes through a provisioning process, during which a bitstream is created and flashed to the device. This is essentially the FPGA configuration, and it includes the firmware in the ROM (not accessible to users), as well as the:</p>
+<ul>
+<li>Unique Device Identity (UDI)
+<ul>
+<li>64 bit number, which includes information about the device, such as the serial number and version. Never changed during a TKey’s lifespan.</li>
+</ul>
+</li>
+<li>Unique Device Secret (UDS)
+<ul>
+<li>An integral part to the device’s security. Namely, it&rsquo;s the device’s unique, and completely random, secret, from which it can use to (for example) derive a public/private key-set.</li>
+</ul>
+</li>
+</ul>
+<h2 id="how-does-the-tkey-work">How does the TKey work?</h2>
+<p>From a user-perspective, using a TKey is as simple as plugging it in, and then running an application on your computer. Behind this user interface, however, the process is a bit more complex.</p>
+<h3 id="ok-so-how-does-it-actually-work">Ok so, how does it actually work?</h3>
+<p>To use a TKey, one essentially needs two applications. The first is called the client app, and it runs on a computer, phone, or any other device which the TKey can be plugged into. The client app is responsible for communicating and sending the second (device) app to the TKey.</p>
+<p>The device app, which runs on the TKey itself, is responsible for the actual program logic. Once the device app is sent to the TKey, the first security feature, measured boot, is commenced.</p>
+<p>Namely, the TKey measures the loaded device application before starting it, creating a hash digest measurement with BLAKE2s. This measurement is combined with the aforementioned UDS, to create a base secret called the Compound Device Identifier (CDI). Users also have the option to input a User Supplied Secret (USS) into the CDI, for additional security. The algorithm for the CDI is subsequently:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#a6e22e">cdi</span> = <span style="color:#a6e22e">blake2s</span>(<span style="color:#a6e22e">UDS</span>, <span style="color:#a6e22e">blake2s</span>(<span style="color:#a6e22e">device_app</span>), <span style="color:#a6e22e">USS</span>)
+</span></span></code></pre></div><h2 id="what-does-this-process-achieve">What does this process achieve?</h2>
+<p>To understand this question, one must again consider the fact that the TKey stores no application or user data on the device. So how do we make sure an application, such as a public/private key generator, can create the same key-pair over and over again, between device resets?</p>
+<p>The answer is the above explained measured boot. Namely, if the exact same TKey device app is loaded to a TKey, and the exact same TKey is used (keeping in mind the UDS never changes), and the exact same USS is input, the resulting CDI will always be the same. And, as keys are derived from the CDI, the same CDI will always generate the same key(s).</p>
+<h2 id="why-do-all-this">Why do all this?</h2>
+<p>One of the main reasons is that the TKey simplifies, and strengthens, authentication. Unlike traditional authentication against a service (or why not even a service against a user?), the process is based on something the user has, the TKey, and something the user knows, that being the USS. One can even combine this with a requirement that the user touches the sensor on the device, adding an additional layer. All of this, with just a USB that plugs into a device.</p>
+<p>But this is just the tip of the iceberg. Since the device uses measured boot, an end user can be sure that an app has not been tampered with, as any changes to the code (or e.g. compiler or packet import versions) will create an entirely different private/public key pair.</p>
+<h2 id="the-other-good-stuff">The other good stuff</h2>
+<p>One of the main features that sets the TKey apart from contenders is that both the firmware, and hardware, are completely open source. This brings with it the advantage that one can review the entire code and hardware design, to fully understand what the TKey does, and how it does it.</p>
+<p>Another great benefit to the TKey is its versatility. Using the exact same open source libraries, and code as Tillitis, users can create new apps to extend TKey functionality. This could for example be an <a href="https://github.com/0xMihir/Cryptum">encrypted file-storage vault using a TKey</a>, or a TOTP app.</p>
+<h2 id="my-time-spent-working-at-tillitis">My Time Spent Working at Tillitis</h2>
+<p>Honestly, it was a great experience. For starters, everyone who works there is great, and they were especially patient with me and all my questions! They have a very smart and skilled team which I think can take the TKey very far.</p>
+<p>Speaking of the TKey itself, I think it’s a really unique, and valuable, security key which has the potential to change how we handle authentication. There’s really no other contender who’s developing a key like Tillitis, in terms of functionality and security features.</p>
+<p>Personally speaking, the uniqueness of the TKey made it a challenge to fully understand at first, though that may just be me. However, this presented a fantastic opportunity for me, as I’ve learnt an incredible amount about not just the TKey, but also security from an implementation perspective.</p>
+<p>Another point really worth highlighting, in my opinion, is the fantastic company ethos. Every single person at Tillitis cares about security, and is passionate about making a truly great and open product, which provides a foundation for users to do as they wish. It’s a direct carry-over from Mullvad, who have an equally great ethos (and who have recently <a href="https://mullvad.net/en/chatcontrol">campaigned against a proposed EU Chat Control 2</a>).</p>
+<figure>
+    <img src="/post/time-at-tillitis/tkey2.jpg" alt="Picture of TKey on keychain with Tillitis strap" class="horizontal-class">
+    <figcaption>My own trusty TKey</figcaption>
+</figure>
+
+<h2 id="closing-notes">Closing Notes</h2>
+<p>Once again, I’d like to thank everyone there for a wonderful, and very educational, time.
+The TKey shop can be found <a href="https:/shop.tillitis.se">here</a>, the general website <a href="https:/tillitis.se">here</a>, and the dev-book <a href="https:/dev.tillitis.se">here</a>.</p>
+    </div>
+</div>
+
+            </main>
+        </div>
+
+
+        
+    </div>
+
+</body>
+
+</html>

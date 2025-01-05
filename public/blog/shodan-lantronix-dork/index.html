@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta name="keywords" content="Imad Alihodzic, iknek">
+
+    <title>
+The Shodan Lantronix Dork | Imad Alihodzic
+</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="generator" content="Hugo 0.140.2">
+
+
+<link rel="canonical" href="http://localhost:1313/blog/shodan-lantronix-dork/" >
+<link href="/sass/main.min.a8be33730f01e46b6e968a84ed6b211a9d1286d34f7e143c012da9c14cd56400.css" rel="stylesheet">
+<meta name="description" content="A personal blog and website where you can learn more about me and what I do." />    
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+</head>
+
+<body>
+
+    <div class="flexWrapper">
+        <header class="headerWrapper">  
+    <div class="header">
+        <div>
+            <a href="http://localhost:1313/">
+                <span class="terminal">iknek@github.io ~ $</span>
+            </a>
+        </div>
+        <input class="side-menu" type="checkbox" id="side-menu">
+        <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+        <nav class="headerLinks">
+            <ul>
+                
+                <li>
+                    <a href="http://localhost:1313/blog" title="" >
+                        ~/Blog</a>
+                </li>
+                
+                <li>
+                    <a href="http://localhost:1313/aboutsite" title="" >
+                        ~/About this site</a>
+                </li>
+                
+                <li>
+                    <a href="http://localhost:1313/aboutme" title="" >
+                        ~/About Me</a>
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+        <div class="content">
+            <main class="main">
+                
+<div class="postWrapper">
+    <h1>The Shodan Lantronix Dork</h1>
+    
+    <section class="postMetadata">
+        <dl>
+            
+                
+<dt>tags</dt>
+<dd><span></span>
+    <a href="/tags/pentesting/">#Pentesting</a><span></span>
+    <a href="/tags/security/">#Security</a><span></span>
+    <a href="/tags/iot/">#IoT</a></dd>
+            
+            
+            
+                
+<dt>categories</dt>
+<dd><span></span>
+    <a href="/categories/authentication/">Authentication</a><span></span>
+    <a href="/categories/pentesting/">Pentesting</a><span></span>
+    <a href="/categories/security/">Security</a></dd>
+            
+            
+                <dt>published</dt>
+                
+                <dd><time datetime="2023-11-06">November 6, 2023</time></dd>
+            
+            
+                <dt>reading time</dt>
+                <dd>3 minutes</dd>
+            
+        </dl>
+    </section>
+    
+    <div>
+        <p>Recently I&rsquo;ve found myself sitting on Shodan.io, trying out different things and generally exploring the tool. By chance, I ended up finding a Lantronix device, which is where things got interesting!</p>
+<h2 id="what-are-lantronix-devices">What are Lantronix Devices?</h2>
+<p>First of all, Lantronix is a company which provides a range of different IoT products, targeting &ldquo;<em>high-growth applications in specific vertical markets, including Smart Grid, Intelligent Transportation, Smart Cities and AI Data Centers</em>&rdquo;. In simpler terms, they make devices like serial to ethernet adapters.</p>
+<p>Many such devices are configurable via a web interface, accessible via HTTP on a browser (typically on port 80), or via <code>telnet</code> on port 9999.</p>
+<h2 id="a-closer-look">A Closer Look</h2>
+<p>As afformentioned, I ended up coming across a Lantronix device in the wild. Before doing anything else, I checked if the organization who owned the device had a bug bounty set up, which they did! Safe in the knowledge that what I was doing was legal, I tried to see what was behind each exposed port for the IP address. One of those lead to a log-in page - for the Lantronix device. With no valid combination of &ldquo;admin&rdquo; and &ldquo;pass&rdquo; or &ldquo;password&rdquo;, I resorted to doing a simple web search for default Lantronix device passwords.</p>
+<h2 id="the-exploit">The Exploit</h2>
+<p>It&rsquo;s at this point I found an interesting note in a user manual. The default password is, in-fact, the last 8 characters of the Device ID! Going back to Shodan, we find none other than the Device ID printed in the console history on port 9999.</p>
+<figure>
+    <img src="/post/shodan-lantronix-dork/lant3.png" alt="Image of the port 9999 response in Shodan (sensitive information redacted)." class="horizontal-class">
+    <figcaption>Image of the port 9999 response in Shodan (sensitive information redacted)</figcaption>
+</figure>
+
+<p>With that identified, the login portal can be revisited. Leaving the username blank, and setting the last 8 Device ID characters as the password, we&rsquo;re granted access!</p>
+<figure>
+    <img src="/post/shodan-lantronix-dork/lant2.png" alt="Image of Lantronix web portal." class="horizontal-class">
+    <figcaption>The Lantronix Web Portal (sensitive information redacted)</figcaption>
+</figure>
+
+<p>To conclude, a dork was promised and a dork shall be recieved:</p>
+<pre><code>&quot;Lantronix&quot; &quot;Device ID: &quot; port:9999 
+</code></pre>
+<h3 id="also-worth-noting">Also Worth Noting</h3>
+<p>In some cases, devices can be missconfigured, allowing for fully unauthenticated access via Telnet.</p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>I think that its important to note, despite the extreme ease of the attack and the relatively low impact one miss-configured IoT device may have, that this is just one of easily hundreds of such exposed IoT devices, that anyone could find and access in just a few minutes.
+Also, despite the ease of the &lsquo;attack&rsquo;, I have run accross this issue numerous times, accross a number of large organizations.</p>
+<p>With the solution (changing the default password or even just hiding the Device ID) being so simple, there is no reason for the vulnerability to exist in the first place.</p>
+    </div>
+</div>
+
+            </main>
+        </div>
+
+
+        
+    </div>
+
+</body>
+
+</html>
