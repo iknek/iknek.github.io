@@ -69,7 +69,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ https://iknek.github.io }}
+      url: ${{ iknek.github.io }}
     runs-on: ubuntu-latest
     needs: build
     steps:
