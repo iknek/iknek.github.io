@@ -36,4 +36,4 @@ Outside of academics and work, I have built computers since the age of 14, and b
 
 ## What am I up to nowadays?
 
-As mentioned, I'm currently back in Sweden from living in the Netherlands. In my free-time, I've found myself doing a fair bit of security research, primarily through public bug bounty and vulnerability disclosure programs. This has been a lot of fun (and very challenging since I'm doing everything alone!), as these types of programs have enabled me to dabble with a vast range of different tech stacks/technologies, and tools.
+As mentioned, I'm currently back in Sweden after living in the Netherlands. In my free-time, I've found myself doing a fair bit of security research, primarily through public bug bounty and vulnerability disclosure programs. This has been a lot of fun (and very challenging since I'm doing everything alone!), as these types of programs have enabled me to dabble with a vast range of different tech stacks/technologies, and tools.
