@@ -16,7 +16,7 @@ series = ["Homelab"]
 aliases = ["homelab"]
 +++
 
-For quite a while now, I have considered purchasing a server. Like most persons looking into acquiring greatly depreciated enterprise hardware, I’ve conceived many a justification for such a purchase, though ultimately have had to concede that it’s purely for the purpose of tinkering.
+For quite a while, I have considered purchasing a server. Like most persons looking into acquiring greatly depreciated enterprise hardware, I’ve conceived many a justification for such a purchase, though ultimately have had to concede that it’s purely for the purpose of tinkering.
 
 <!--more-->
 
